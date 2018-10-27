@@ -14,10 +14,10 @@ $ cd ~/bin
 $ mkdir issue
 $ wget https://raw.githubusercontent.com/sbragagnolo/issue/master/issue -P .
 $ wget https://raw.githubusercontent.com/sbragagnolo/issue/master/issue-pharo.st -P .
-$ echo "export ISSUE_HOME=~/bin/issue"
-$ echo "export ISSUE_PROTOCOL=ssh"
-$ echo "export ISSUE_USER=<YOUR-GIT-HUB-USER>"
-$ echo "source $ISSUE_HOME/issue" >> .bashrc  # or .zshrc
+$ echo "export ISSUE_HOME=~/bin/issue"  >> .bashrc  # or .zshrc
+$ echo "export ISSUE_PROTOCOL=ssh"  >> .bashrc  # or .zshrc
+$ echo "export ISSUE_USER=<YOUR-GIT-HUB-USER>"  >> .bashrc  # or .zshrc
+$ echo "source \$ISSUE_HOME/issue" >> .bashrc  # or .zshrc
 $ source .bashrc
 ```
 
