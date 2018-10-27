@@ -1,0 +1,30 @@
+
+alias ph="./pharo-ui Pharo.image"
+alias ph-hl="./pharo Pharo.image"
+
+function gph() {
+   PHARO=70+vm
+   if [ "$#" -eq 1 ]; then
+     PHARO=$1
+   fi
+   wget -O- get.pharo.org/$PHARO | bash 
+} 
+function gpo() {
+   wget -O- get.pharo.org/$1 | bash 
+   ph
+} 
+
+function issue() {
+   if [ "$#" -ne 1 ]; then
+    echo "Illegal number of parameters. issue 234234 "
+   fi
+   gph 70+vm
+   confIssue $1 
+} 
+function confIssue() { 
+  if [ "$#" -ne 1 ]; then
+    echo "Illegal number of parameters. confIssue 234234 "
+   fi
+   ph st $ISSUE_HOME/issue-pharo.st --protocol=$ISSUE_PROTOCOL --user=$ISSUE_USER --issue=$1 
+}
+
