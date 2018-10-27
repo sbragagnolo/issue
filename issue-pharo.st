@@ -9,7 +9,7 @@ protocol := protocol = #ssh ifTrue: [ #ssh_url ] ifFalse: [ #html_url ].
 issueNumber := CommandLineArguments new optionAt: #issue ifAbsent: [ self error: ' Issue is passed by --issue -i is mandatory' ] .
 (issueNumber size = 5 and: [ issueNumber isAllDigits ] ) ifFalse:  [ self error: ' The issue number is not valid ' ].
 
-
+IceCredentialsProvider useCustomSsh: true. 
 
 issue := PharoIssue number: issueNumber. 
 issue downloadTitle.
